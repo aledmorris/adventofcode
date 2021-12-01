@@ -10,9 +10,8 @@ increases = 0
 # Strips the newline character
 for line in Lines:
     values.append(int(line))
-    
 
-
+# process values to count number of increases
 for index,value in enumerate(values):
     if(index<(len(values)-1)):
         if values[index+1] > value:
