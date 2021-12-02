@@ -7,7 +7,6 @@ Lines = data_file.readlines()
 values = []
 increases = 0
 
-# Strips the newline character
 for line in Lines:
     values.append(int(line))
 
