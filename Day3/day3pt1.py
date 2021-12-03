@@ -18,7 +18,6 @@ bit8 = []
 bit9 = []
 bit10 = []
 bit11 = []
-# bit = []
 
 line_count = (len(Lines)/2)
 
@@ -52,7 +51,7 @@ def epsilon_calc(bit):
     return result
     
     
-
+# build the per bit lists
 for line in Lines:
     bit0.append(line[0])
     bit1.append(line[1])
@@ -67,13 +66,7 @@ for line in Lines:
     bit10.append(line[10])
     bit11.append(line[11])
 
-# check the output (sanity check print first 5 lines)
-'''
-x = 0
-while x <5:
-    print(f'{bit0[x]}{bit1[x]}{bit2[x]}{bit3[x]}{bit4[x]}{bit5[x]}{bit6[x]}{bit7[x]}{bit8[x]}{bit9[x]}{bit10[x]}{bit11[x]}')
-    x +=1
-'''
+
 
 # create gamma list
 gamma_code.append(gamma_calc(bit0))
@@ -93,10 +86,6 @@ gamma_string = ''
 for item in gamma_code:
     gamma_string += item
     
-print(gamma_string)
-print(gamma_code)
-print(int(gamma_string,2))
-
 # create epsilon list
 epsilon_code.append(epsilon_calc(bit0))
 epsilon_code.append(epsilon_calc(bit1))
@@ -115,16 +104,6 @@ epsilon_string = ''
 for item in epsilon_code:
     epsilon_string += item
     
-print(epsilon_string)
-print(epsilon_code)
-print(int(epsilon_string,2))
-
 print('\nPower consumption = '+str((int(gamma_string,2)*int(epsilon_string,2))))
 
-'''
-print('\n1\'s in bit 0: '+str(int(bit0.count('1'))))
-print('0\'s in bit 0: '+str(int(bit0.count('0'))))
-'''
-
-
-    
+ 
