@@ -20,6 +20,38 @@ bit10 = []
 bit11 = []
 # bit = []
 
+line_count = (len(Lines)/2)
+
+gamma_code = []
+epsilon_code = []
+
+
+# functions
+def gamma_calc(bit):
+    #
+    ones = int(bit.count('1'))
+    zeros = int(bit.count('0'))
+    
+    if ones > zeros:
+        result = '1'
+    else:
+        result = '0'
+        
+    return result
+
+def epsilon_calc(bit):
+    #
+    ones = int(bit.count('1'))
+    zeros = int(bit.count('0'))
+    
+    if ones < zeros:
+        result = '1'
+    else:
+        result = '0'
+        
+    return result
+    
+    
 
 for line in Lines:
     bit0.append(line[0])
@@ -35,7 +67,7 @@ for line in Lines:
     bit10.append(line[10])
     bit11.append(line[11])
 
-# check the output (sanity check)
+# check the output (sanity check print first 5 lines)
 '''
 x = 0
 while x <5:
@@ -43,5 +75,56 @@ while x <5:
     x +=1
 '''
 
+# create gamma list
+gamma_code.append(gamma_calc(bit0))
+gamma_code.append(gamma_calc(bit1))
+gamma_code.append(gamma_calc(bit2))
+gamma_code.append(gamma_calc(bit3))
+gamma_code.append(gamma_calc(bit4))
+gamma_code.append(gamma_calc(bit5))
+gamma_code.append(gamma_calc(bit6))
+gamma_code.append(gamma_calc(bit7))
+gamma_code.append(gamma_calc(bit8))
+gamma_code.append(gamma_calc(bit9))
+gamma_code.append(gamma_calc(bit10))
+gamma_code.append(gamma_calc(bit11))
+
+gamma_string = ''
+for item in gamma_code:
+    gamma_string += item
+    
+print(gamma_string)
+print(gamma_code)
+print(int(gamma_string,2))
+
+# create epsilon list
+epsilon_code.append(epsilon_calc(bit0))
+epsilon_code.append(epsilon_calc(bit1))
+epsilon_code.append(epsilon_calc(bit2))
+epsilon_code.append(epsilon_calc(bit3))
+epsilon_code.append(epsilon_calc(bit4))
+epsilon_code.append(epsilon_calc(bit5))
+epsilon_code.append(epsilon_calc(bit6))
+epsilon_code.append(epsilon_calc(bit7))
+epsilon_code.append(epsilon_calc(bit8))
+epsilon_code.append(epsilon_calc(bit9))
+epsilon_code.append(epsilon_calc(bit10))
+epsilon_code.append(epsilon_calc(bit11))
+
+epsilon_string = ''
+for item in epsilon_code:
+    epsilon_string += item
+    
+print(epsilon_string)
+print(epsilon_code)
+print(int(epsilon_string,2))
+
+print('\nPower consumption = '+str((int(gamma_string,2)*int(epsilon_string,2))))
+
+'''
+print('\n1\'s in bit 0: '+str(int(bit0.count('1'))))
+print('0\'s in bit 0: '+str(int(bit0.count('0'))))
+'''
 
 
+    
